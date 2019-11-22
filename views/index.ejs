@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Prata&display=swap"
+      rel="stylesheet"
+    />
+    <title>To do app</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-do app</h1>
+    <form action="/to-do" method="POST">
+      <div class="task-input-container">
+        <input
+          type="text"
+          name="newTask"
+          id="newTask"
+          placeholder="Add new task"
+        /><br />
+        <input
+          type="submit"
+          name="addBtn"
+          id="addBtn"
+          value="Add task"
+        /><br />
+        </form>
+      </div>
+      <div class="added-tasks">
+        <h2>Added task</h2>
+        <input type="checkbox" name="add-check-box" id="add-check-box" /> <br />
+        <input type="button" name="removeBtn" id="removeBtn" value="remove" />
+      </div>
+
+      <div class="completed-tasks">
+        <h2>Completed task</h2>
+        <input type="checkbox" name="doneCheckBox" id="doneCheckBox" />
+      </div>
+      </div>
+    </form>
+  </body>
+</html>
