@@ -11,17 +11,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
-var task = ["buy socks", "buy detergent"];
+let task = [];
 
 app.post("/to-do", (req, res) => {
   let newTask = req.body.newTask;
   task.push(newTask);
-  res.redirect("/");
   console.log(task);
+  res.render("index.ejs", { task: task });
+  //   res.redirect("/");
 });
 
-app.get("/", (req, res) => {
-  res.render("index.ejs", { task });
-});
+// app.get("/", (req, res) => {
+//   console.log("Get" + task);
+//   res.render("index.ejs", { task: task[0] });
+// });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));

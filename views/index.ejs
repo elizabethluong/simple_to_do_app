@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <h1>To-do app</h1>
-    <form action="/to-do" method="POST">
+    <form action="/to-do" method="post">
       <div class="task-input-container">
         <input
           type="text"
@@ -32,7 +32,9 @@
       </div>
       <div class="added-tasks">
         <h2>Added task</h2>
-        <input type="checkbox" name="add-check-box" id="add-check-box" /> <br />
+        <% for( var i = 0; i < task.length; i++){ %>
+            <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+            <% } %>
         <input type="button" name="removeBtn" id="removeBtn" value="remove" />
       </div>
 
