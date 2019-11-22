@@ -6,14 +6,22 @@ app.use(express.static("views"));
 app.use(express.static("public"));
 app.use(express.urlencoded());
 
-app.set('view engine', 'ejs');
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
 
+app.set("view engine", "ejs");
 
-app.get("/", (req, res) => res.render("index.ejs"));
+var task = ["buy socks", "buy detergent"];
 
 app.post("/to-do", (req, res) => {
   let newTask = req.body.newTask;
-  console.log(newTask);
+  task.push(newTask);
+  res.redirect("/");
+  console.log(task);
+});
+
+app.get("/", (req, res) => {
+  res.render("index.ejs", { task });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
