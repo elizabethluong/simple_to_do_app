@@ -47,7 +47,7 @@ input[type="text"] {
 
 input[type="button"],
 input[type="submit"],
-.remove-btn {
+.removeBtn {
   padding: 8px 15px;
   font-size: 14px;
   font-weight: bold;
@@ -59,7 +59,7 @@ input[type="submit"],
 
 input[type="button"]:hover,
 input[type="submit"]:hover,
-.remove-btn:hover {
+.removeBtn:hover {
   color: white;
   background: #4782ff;
 }
