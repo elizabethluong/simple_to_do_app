@@ -14,35 +14,40 @@
   <body>
     <div class="container">
       <h1>To-do app</h1>
-    <form action="/to-do" method="post">
-      <div class="task-input-container">
-        <input
-          type="text"
-          name="newTask"
-          id="newTask"
-          placeholder="Add new task"
-        /><br />
-        <input
-          type="submit"
-          name="addBtn"
-          id="addBtn"
-          value="Add task"
-        /><br />
-        </form>
-      </div>
-      <div class="added-tasks">
-        <h2>Added task</h2>
-        <% for( var i = 0; i < task.length; i++){ %>
-            <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
-            <% } %>
-        <input type="button" name="removeBtn" id="removeBtn" value="remove" />
-      </div>
+      <form action="/to-do" method="post">
+        <div class="task-input-container">
+          <input
+            type="text"
+            name="newTask"
+            id="newTask"
+            placeholder="Add new task"
+          /><br />
+          <input
+            type="submit"
+            name="addBtn"
+            id="addBtn"
+            value="Add task"
+          /><br />
+        </div>
+      </form>
+      <form action="/removetask" method="post">
+        <div class="added-tasks">
+          <h2>Added task</h2>
+          <% for( var i = 0; i < tasks.length; i++){ %>
+          <li>
+            <input type="checkbox" name="<%= tasks[i] %>" checked />
+            <%= tasks[i] %>
+          </li>
+          <% } %>
+          <input type="submit" name="removeBtn" id="removeBtn" value="remove" />
+        </div>
+      </form>
+
+      <form action="/removetask" method="post"></form>
 
       <div class="completed-tasks">
         <h2>Completed task</h2>
-        <input type="checkbox" name="doneCheckBox" id="doneCheckBox" />
       </div>
-      </div>
-    </form>
+    </div>
   </body>
 </html>
